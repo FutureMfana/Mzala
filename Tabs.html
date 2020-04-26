@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Question 2
+        </title>
+        <style>
+            .container{
+                padding: 10px;
+                background-color: rgb(28, 160, 160);
+            }
+            .tabs{
+                background-color: #ddd;
+            }
+            .interface{
+                display: none;
+            }
+            button{
+                border: none;
+                transition: 0.3s;
+                outline: none;
+                width: 49.8%;
+                background-color: #ddd;
+                height: 50px;
+            }
+            button:hover{
+                background-color: #ccc;
+            }
+            .content{
+                padding: 10px;
+                background-color: beige;
+            }
+            .focus{
+                background-color: rgb(28, 160, 160);
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="tabs">
+                <button class="open-tab focus" id="info" onclick="changeTab('information')">Information</button>
+                <button class="open-tab" id="inter" onclick="changeTab('interface')">Interface</button>
+            </div>
+    
+            <div class="information content" id="information">
+                <h1>Fluid unit coversion</h1><br>
+                <p>These are two primary units for measuring volume of fluid.
+                    <li>
+                        <ul>
+                            Imperial system uses units such as gallion
+                        </ul>
+                    </li><li>
+                        <ul>
+                            Metric system uses units such as lites.
+                        </ul>
+                    </li>
+                    <br>
+                    This app allows you to convert gallons to litres using the formula: <br>
+                    litre = gallon/3.789
+                </p>
+            </div>
+    
+            <div class="interface content" id="interface">
+                <h1>Interface</h1>
+                <table>
+                    <tr>
+                        <td>
+                            Imperial:
+                        </td>
+                        <td>
+                            <input type="number" class="imperial">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Metrics:
+                        </td>
+                        <td>
+                            <input type="number" name="metrics">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <input type="button" value="Clear Form">
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <script>
+            function changeTab(tab){
+                if(tab == 'information'){
+                    document.getElementById("information").style.display = "block";
+                    document.getElementById("info").style.backgroundColor = "rgb(28, 160, 160)";
+                    document.getElementById("interface").style.display = "none";
+                    document.getElementById("inter").style.backgroundColor = "#ddd";
+                }else{
+                    document.getElementById("information").style.display = "none";
+                    document.getElementById("info").style.backgroundColor = "#ddd";
+                    document.getElementById("interface").style.display = "block";
+                    document.getElementById("inter").style.backgroundColor = "rgb(28, 160, 160)";
+                }
+            }
+        </script>
+    </body>
+</html>
